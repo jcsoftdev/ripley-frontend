@@ -11,13 +11,13 @@
 }
 .top-bar ul li a {
   text-decoration: none;
-  color: #DCECF9;
   font-size: 1.2rem;
   font-weight: bold;
+  color: #061623;
 }
 .top-bar ul li:hover a {
-  color: #061623;
+  color: #DCECF9;
 }
 .top-bar ul li a.active {
-  color: #061623;
+  color: #DCECF9;
 }

@@ -7,18 +7,18 @@ const TopBar = () => {
       <ul>
         <li>
           <NavLink
-            to={"create"}
+            to={"/"}
             className={(nav) => (nav.isActive ? "active" : "")}
           >
-            Create User
+            Home
           </NavLink>
         </li>
         <li>
           <NavLink
-            to={"/"}
+            to={"create"}
             className={(nav) => (nav.isActive ? "active" : "")}
           >
-            All User
+            Crear usuario
           </NavLink>
         </li>
       </ul>
