@@ -1,0 +1,25 @@
+.modal {
+  padding: 1rem;
+  width: 100%;
+  margin: 0 auto;
+  color: #061623;
+}
+
+.modal h1 {
+  font-size: 1.2rem;
+}
+
+.modal .back {
+  text-decoration: none;
+  color: #061623;
+  border: 1px solid #061623;
+  display: inline-block;
+  padding: 4px 8px ;
+  border-radius: 4px;
+}
+
+.modal .back:hover {
+  background-color: #061623;
+  color: aliceblue;
+  transition: all .5s ease;
+}

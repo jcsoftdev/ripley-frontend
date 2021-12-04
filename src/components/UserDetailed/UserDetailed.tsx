@@ -1,10 +1,20 @@
 
+import { useLocation } from "react-router";
+import { Link } from "react-router-dom";
+import './UserDetailed.css'
 
 const UserDetailed = () => {
+  const location = useLocation();
+
+  const {modalOpen, data} = location.state
+  
   return (
-    <div>
-      
-    </div>
+    modalOpen?<div className='modal'>
+      <h1>Nombre: {data.name} {data.last_name}</h1>
+      <p>Edad: {data.age}</p>
+      <p>Fecha de Nacimiento: {data.born}</p>
+      <Link to="/" className='back'>Volver</Link>
+    </div>: <></>
   )
 }
 

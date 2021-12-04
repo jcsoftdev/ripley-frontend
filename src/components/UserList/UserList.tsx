@@ -1,4 +1,5 @@
 import { useQuery } from "react-query";
+import { useNavigate } from "react-router";
 import Average from "../Average/Average";
 
 import User from "../User";
@@ -9,6 +10,7 @@ import "./UserList.css";
 const API_BASE = "/api";
 
 const UserList = () => {
+  const navigate = useNavigate();
   const getUsers = async () => {
     try {
       const res = await fetch(`${process.env.REACT_APP_API}${API_BASE}/users`);
@@ -24,7 +26,7 @@ const UserList = () => {
       const res = await fetch(
         `${process.env.REACT_APP_API}${API_BASE}/user/average`
       );
-      const data: {average: number} = await res.json();
+      const data: { average: number } = await res.json();
       return data;
     } catch (error) {
       throw new Error(`${error}`);
@@ -47,7 +49,14 @@ const UserList = () => {
           <User
             key={`${user.id}-${user.name}`}
             {...user}
-            onClick={() => console.log(user)}
+            onClick={() => {
+              navigate(`/user/${user.id}`, {
+                state: {
+                  modalOpen: true,
+                  data: user
+                },
+              });
+            }}
           />
         ))}
       </div>
