@@ -1,25 +1,48 @@
 .modal {
   padding: 1rem;
-  width: 100%;
   margin: 0 auto;
   color: #061623;
+  border: 1px solid #061623;
+  border-radius: 1rem;
+  margin: 0 10px ;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+@media (min-width: 768px) {
+  .modal {
+    padding: 2rem ;
+  }
 }
 
 .modal h1 {
   font-size: 1.2rem;
 }
 
-.modal .back {
+.modal p {
+  margin: 0;
+}
+
+.modal-container .back {
   text-decoration: none;
   color: #061623;
   border: 1px solid #061623;
   display: inline-block;
   padding: 4px 8px ;
   border-radius: 4px;
+  align-self: end;
 }
 
 .modal .back:hover {
   background-color: #061623;
   color: aliceblue;
   transition: all .5s ease;
+}
+
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center ;
+  align-items: center;
 }
