@@ -97,7 +97,7 @@ const UserForm = () => {
           />
         </div>
         <div className="form-input">
-          <label htmlFor="name">nombre</label>
+          <label htmlFor="name">Fecha de Nacimiento</label>
           <input
             type="date"
             id="date"
