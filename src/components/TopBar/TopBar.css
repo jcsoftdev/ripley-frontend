@@ -1,0 +1,23 @@
+.top-bar {
+  padding: 1rem 0;
+  background-color: #1B629D;
+  margin-bottom: 2rem;
+}
+.top-bar ul {
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+.top-bar ul li a {
+  text-decoration: none;
+  color: #DCECF9;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.top-bar ul li:hover a {
+  color: #061623;
+}
+.top-bar ul li a.active {
+  color: #061623;
+}

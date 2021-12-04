@@ -1,0 +1,36 @@
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+.form-container h2 {
+  color: #061623;
+}
+.form .form-input {
+  color: #061623;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+.form .form-input input {
+  color: #061623;
+  border-radius: 4px;
+  border: 1px solid #061623;
+  padding: 8px;
+  margin-top: 4px;
+}
+.form .button {
+  width: 100%;
+  padding: 8px;
+  cursor: pointer;
+  background-color: #1B629D;
+  border: 0;
+  border-radius: 4px;
+  color: #DCECF9;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.form .button:hover {
+  background-color: #124269;
+  transition: background-color ease .5s;
+}

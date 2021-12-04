@@ -1,9 +1,10 @@
 import { useQuery } from "react-query";
+import Average from "../Average/Average";
 
 import User from "../User";
 import { UserListI } from "./types";
 
-import './UserList.css'
+import "./UserList.css";
 
 const API_BASE = "/api";
 
@@ -17,16 +18,41 @@ const UserList = () => {
       throw new Error(`${error}`);
     }
   };
-  const { isLoading, error, data } = useQuery("repoData", getUsers);
+
+  const getAverage = async () => {
+    try {
+      const res = await fetch(
+        `${process.env.REACT_APP_API}${API_BASE}/user/average`
+      );
+      const data: {average: number} = await res.json();
+      return data;
+    } catch (error) {
+      throw new Error(`${error}`);
+    }
+  };
+  const { isLoading, error, data } = useQuery("users", getUsers);
+  const { error: errorAverage, data: average } = useQuery(
+    "average",
+    getAverage
+  );
 
   if (isLoading) return <p>Loading...</p>;
   if (error) return <p>Error to fetch</p>;
 
-  return <div className='user-list'>
-    {data?.map((user)=> (
-      <User key={`${user.id}-${user.name}`} {...user} onClick={()=>console.log(user)} />
-    ))}
-  </div>;
+  return (
+    <>
+      {!errorAverage && <Average average={average?.average} />}
+      <div className="user-list">
+        {data?.map((user) => (
+          <User
+            key={`${user.id}-${user.name}`}
+            {...user}
+            onClick={() => console.log(user)}
+          />
+        ))}
+      </div>
+    </>
+  );
 };
 
 export default UserList;
